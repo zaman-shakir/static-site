@@ -1,13 +1,18 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: github # Replace 'github' with your preferred backend provider
+  branch: master # Branch to update (optional; defaults to master)
+
 media_folder: "images"
+public_folder: "/images"
 
 collections:
-  name: "index" # Collection for managing the content of the index page
-  label: "Index Page" # Label for the collection
-  file: "index.html" # Path to the index.html file
-  fields: # Define fields for the index page
-    - { label: "Title", name: "title", widget: "string" } # Title field
-    - { label: "Description", name: "description", widget: "text" } # Description field
-        # Add more fields as needed for managing content
+  - name: "pages" # Example collection name for managing pages
+    label: "Pages" # Label for the collection
+    files:
+      - file: "index.html" # Path to the index.html file
+        name: "index" # Name of the file in the collection
+        label: "Index Page" # Label for the file
+        fields: # Define fields for the index page
+          - {label: "Title", name: "title", widget: "string"} # Title field
+          - {label: "Description", name: "description", widget: "text"} # Description field
+          # Add more fields as needed for managing content
