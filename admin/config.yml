@@ -1,5 +1,5 @@
 backend:
-  name: github # Replace 'github' with your preferred backend provider
+  name: git-gateway # Replace 'github' with your preferred backend provider
   branch: master # Branch to update (optional; defaults to master)
 
 media_folder: "images"
