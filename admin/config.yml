@@ -1,5 +1,15 @@
-backend:
-    name: git-gateway
-    branch: master # Branch to update (optional; defaults to master)
-# This line should *not* be indented
-media_folder: "images" # Media files will be stored in the repo under images/uploads
+name: git-gateway
+branch: master
+media_folder: "images"
+
+collections:
+  name: "index" # Collection for managing the content of the index page
+  label: "Index Page" # Label for the collection
+  files:
+  file: "index.html" # Path to the index.html file
+  name: "index" # Name of the file in the collection
+  label: "Index Page" # Label for the file
+  fields: # Define fields for the index page
+    - { label: "Title", name: "title", widget: "string" } # Title field
+    - { label: "Description", name: "description", widget: "text" } # Description field
+            # Add more fields as needed for managing content
