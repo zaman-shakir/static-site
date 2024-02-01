@@ -28,8 +28,8 @@
 								<h1 id="dimension-text2">Dimension</h1>
 								<p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
 								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
-                                <h1 id="dimension-text">{{ homepage_content.title }}</h1>
-                                <p>{{ homepage_content.description }}</p>
+                                <h1 id="dimension-text">Loading...</h1>
+                                <p id="description">Loading...</p>
                             </div>
 						</div>
 						<nav>
@@ -351,7 +351,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- BG -->
 			<div id="bg"></div>
+<script>
+    fetch('content/homepage/index.md') // Adjust the path accordingly
+            .then(response => response.text())
+            .then(data => {
+                // Parse Markdown content
+                const lines = data.split('\n');
+                const title = lines[0].substring(6).trim();
+                const description = lines.slice(2).join('\n').trim();
 
+                // Inject content into HTML
+                document.getElementById('dimension-text').innerText = title;
+                document.getElementById('description').innerText = description;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
