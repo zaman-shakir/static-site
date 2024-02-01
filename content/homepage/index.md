@@ -1,4 +1,4 @@
 ---
 title: Title updated from CMS
-description: this is updated description
+description: Description updated from CMS
 ---
