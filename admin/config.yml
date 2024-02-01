@@ -9,6 +9,7 @@ collections:
     - name: "homepage_content"
       label: "Homepage Content"
       folder: "content/homepage"
+      create: true
       extension: "md" # Specify the file extension
       slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
       fields:
